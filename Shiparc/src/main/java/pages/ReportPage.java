@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ReportPage {	
 	public WebDriver driver;//Instance Variable
+	WaitUtility waitutility=new WaitUtility();//Reusability of Explicit Wait click provided by WaitUtility
+	
 	public ReportPage(WebDriver driver) //Create Constructor with parameter WebDriver driver: local variable
 		{
 			this.driver=driver; //this used as Instance and Local variables are same
@@ -20,6 +22,7 @@ public class ReportPage {
 		
 	public UnsafeActPage clickUnsafeActBehaviourButton()
 	{
+		waitutility.waitUntilElementToBeClickable(driver, unsafeActBehaviourButton);//Implementing Explicit Wait
 		unsafeActBehaviourButton.click();
 		return new UnsafeActPage(driver);
 	}
