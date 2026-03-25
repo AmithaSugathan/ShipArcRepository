@@ -6,7 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class UnsafeActPage {
 	public WebDriver driver;
-	
+		PageUtility pageutility=new PageUtility();//Reusability of JavaScript-based click provided by PageUtility
+		WaitUtility waitutility=new WaitUtility();//Reusability of Explicit Wait click provided by WaitUtility
+		
 	public UnsafeActPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -16,7 +18,6 @@ public class UnsafeActPage {
 	@FindBy(xpath="//button[text()='Start Reporting']") WebElement startReportingButton;
 	@FindBy(xpath="//li[text()='YES']") WebElement yesAnonymousUser;
 	@FindBy(xpath="//button[text()='Next']/following::span[@class='MuiTouchRipple-root css-4mb1j7']") WebElement reportNext;
-	
 	
 	@FindBy(xpath="//li[text()='Unsafe Act']") WebElement typeUnsafeAct;
 	@FindBy(xpath="//textarea[@id=':r27:']") WebElement textDescriptionOfUnsafeAct;
@@ -36,74 +37,74 @@ public class UnsafeActPage {
 		
 	public UnsafeActPage clickstartReportingButton()
 	{
-		startReportingButton.click();
+		pageutility.javaScriptClick(driver, startReportingButton);//Implementing JavaScript-based click
 		return this;
 	}
 	public UnsafeActPage clickYesAnonymousUser()
 	{
-		yesAnonymousUser.click();
+		waitutility.waitUntilElementToBeClickable(driver, yesAnonymousUser);//Implementing Explicit Wait
 		return this;
 	}	
 	public UnsafeActPage clickReportNext()
 	{
-		reportNext.click();
+		waitutility.waitUntilElementToBeClickable(driver, reportNext);//Implementing Explicit Wait
 		return this;
 	}
 	public UnsafeActPage clicktypeUnsafeAct()
 	{
-		typeUnsafeAct.click();
+		pageutility.javaScriptClick(driver, typeUnsafeAct);//Implementing JavaScript-based click
 		return this;
 	}
 	public UnsafeActPage enterTextDescriptionOfUnsafeAct(String descriptionUnsafeAct)
 	{
-		textDescriptionOfUnsafeAct.sendKeys(descriptionUnsafeAct);//Valid Password. passwordvalue: to store excel read data
+		waitutility.waitUntilElementToBeClickable(driver, textDescriptionOfUnsafeAct);//Implementing Explicit Wait
 		return this;
 	}
 	public UnsafeActPage clickUploadFileButton()
 	{
-		uploadFileButton.click();
+		pageutility.javaScriptClick(driver, uploadFileButton);//Implementing JavaScript-based click
 		return this;
 	}
 	public UnsafeActPage clickNextButton()
 	{
-		nextButton.click();
+		pageutility.javaScriptClick(driver, nextButton);//Implementing JavaScript-based click
 		return this;
 	}
 	
 	public UnsafeActPage clickreaOfWorkACRoom()
 	{
-		areaOfWorkACRoom.click();
+		waitutility.waitUntilElementToBeClickable(driver, areaOfWorkACRoom);//Explicit Wait
 		return this;
 	}
 	public UnsafeActPage enterTextDescriptionCorrectiveAction(String descriptionCorrectiveAction)
 	{
-		textDescriptionCorrectiveAction.sendKeys(descriptionCorrectiveAction);//Valid Password. passwordvalue: to store excel read data
+		textDescriptionCorrectiveAction.sendKeys(descriptionCorrectiveAction);
 		return this;
 	}
 	public UnsafeActPage clickObservationPPE()
 	{
-		observationPPE.click();
+		waitutility.waitUntilElementToBeClickable(driver, observationPPE);//Explicit Wait
 		return this;
 	}
 	public UnsafeActPage clickInterventionNoAction()
 	{
-		interventionNoAction.click();
+		waitutility.waitUntilElementToBeClickable(driver, interventionNoAction);//Explicit Wait
 		return this;
 	}
 	
 	public UnsafeActPage clickCategoryOfObservation()
 	{
-		categoryOfObservation.click();
+		pageutility.javaScriptClick(driver, categoryOfObservation);//Implementing JavaScript-based click
 		return this;
 	}	
 	public UnsafeActPage clickOutcomeCorrected()
 	{
-		outcomeCorrected.click();
+		pageutility.javaScriptClick(driver, outcomeCorrected);//Implementing JavaScript-based click
 		return this;
 	}
 	public UnsafeActPage clickStatusOpen()
 	{
-		statusOpen.click();
+		pageutility.javaScriptClick(driver, statusOpen);//Implementing JavaScript-based click
 		return this;
 	}
 	public UnsafeActPage enterTextDescriptionSuggestions(String descriptionSuggestions)
@@ -113,17 +114,17 @@ public class UnsafeActPage {
 	}
 	public UnsafeActPage clickReviewButton()
 	{
-		reviewButton.click();
+		pageutility.javaScriptClick(driver, reviewButton);//Implementing JavaScript-based click
 		return this;
 	}
 	public UnsafeActPage clickSubmitButton()
 	{
-		submitButton.click();
+		pageutility.javaScriptClick(driver, submitButton);//Implementing JavaScript-based click
 		return this;
 	}
 	public UnsafeActPage clickViewReportButton()
 	{
-		viewReportButton.click();
+		pageutility.javaScriptClick(driver, viewReportButton);//Implementing JavaScript-based click
 		return this;
 	}
 	
