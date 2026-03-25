@@ -4,12 +4,13 @@ package pages;
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.support.FindBy;
 	import org.openqa.selenium.support.PageFactory;
-	
+
+import utilities.PageUtility;
 
 	public class HomePage {
 		
 		public WebDriver driver;
-		
+		PageUtility pageutility=new PageUtility();//Reusability of JavaScript-based click provided by PageUtility
 		public HomePage(WebDriver driver)
 		{
 			this.driver=driver;
@@ -22,7 +23,8 @@ package pages;
 		
 		public ReportPage clickReportsMenu()
 		{
-			reportsMenu.click();
+			
+			pageutility.javaScriptClick(driver, reportsMenu);//Implementing JavaScript-based click
 			return new ReportPage(driver);
 		}
 		public String isReportsPageMenuTextReturned()
